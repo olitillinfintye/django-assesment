@@ -30,6 +30,12 @@ ALLOWED_HOSTS = []
 # User model
 AUTH_USER_MODEL = 'api.User'
 
+# Allauth settings
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_EMAIL_VERIFICATION = 'optional'  # or 'mandatory'
+LOGIN_REDIRECT_URL = '/'  # Redirect URL after login
+LOGOUT_REDIRECT_URL = '/'  # Redirect URL after logout
 
 # Application definition
 
@@ -57,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'myproject.urls'
