@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import User
+from django.db import models
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -12,3 +13,4 @@ class UserSerializer(serializers.ModelSerializer):
         user.set_password(validated_data['password'])
         user.save()
         return user
+

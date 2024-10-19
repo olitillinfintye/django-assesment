@@ -7,6 +7,14 @@ from rest_framework.authtoken.models import Token
 from .serializers import UserSerializer
 from django.contrib.auth import authenticate
 from .models import User
+from django.contrib.auth import logout
+
+def logout_view(request):
+    logout(request)
+    return redirect("/")
+
+def home(request):
+    return render(request, "index.html")
 
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
