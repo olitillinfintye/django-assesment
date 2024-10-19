@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Auth</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fsearch%2Fcyber&psig=AOvVaw2dORIt9m5nY9cT7kxWckVC&ust=1729421759465000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCKiA7qCkmokDFQAAAAAdAAAAABAE'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white; /* Optional: Change text color for better contrast */
+        }
+        .container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for better readability */
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        h2 {
+            color: #444;
+            margin-bottom: 20px;
+            font-family: 'Roboto', sans-serif;
+        }
+        a {
+            display: inline-block;
+            padding: 12px 24px;
+            color: white;
+            background-color: #4285f4;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Roboto', sans-serif;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        a:hover {
+            background-color: #2b6ed2;
+            transform: translateY(-2px);
+        }
+        a:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    {% load socialaccount %}
+    <div class="container">
+        <h2>Google Login</h2>
+        <a href="{% provider_login_url 'google' %}?next=/accounts/">Login with Google</a>
+    </div>
+</body>
+</html>
